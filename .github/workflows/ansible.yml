@@ -1,3 +1,4 @@
+---
 name: Ansible Deploy
 on:
   push:
