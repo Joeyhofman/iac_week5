@@ -17,4 +17,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run Ansible Playbook
-        run: ansible-playbook -i inventory.ini apache.yml
+        run: ansible-playbook -i inventory.ini playbooks/install_apache.yml
