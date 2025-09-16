@@ -1,8 +1,11 @@
+---
 - hosts: all
-  become: yes
+  become: true
   tasks:
     - name: Installeer Apache2 via shell
-      shell: apt-get update && apt-get install -y apache2
+      shell: >
+        apt-get update &&
+        apt-get install -y apache2
       args:
         warn: false
       register: apache_install
