@@ -27,7 +27,7 @@ data "template_file" "Default" {
 }
 
 resource "esxi_guest" "ubuntu_test" {
-  guest_name = "ubuntu_test_ci_cd"
+  guest_name = "ubuntu_test_ci"
   disk_store = var.disk_store
   ovf_source = var.ubuntu_image_url
 
