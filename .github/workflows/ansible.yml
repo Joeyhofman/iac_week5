@@ -1,0 +1,19 @@
+name: Ansible Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  lint:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: Lint YAML
+        run: yamllint .
+  deploy:
+    needs: lint
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Ansible Playbook
+        run: ansible-playbook -i inventory.ini apache.yml
