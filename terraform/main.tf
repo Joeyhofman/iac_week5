@@ -40,6 +40,6 @@ resource "esxi_guest" "ubuntu_test" {
     "userdata"          = base64gzip(data.template_file.Default.rendered)
   }
 
-  memsize = 1024
+  memsize  = 1024
   numvcpus = 1
 }
