@@ -3,13 +3,10 @@
   become: true
   tasks:
     - name: Installeer Apache2 via shell
-      shell: >
-        apt-get update &&
-        apt-get install -y apache2
-      args:
-        warn: false
+      ansible.builtin.shell: |
+        apt-get update && apt-get install -y apache2
       register: apache_install
-      changed_when: "'0 upgraded, 0 newly installed' not in apache_install.stdout"
+      changed_when: apache_install.rc == 0
 
     - name: Laat bewust een fout zien
-      command: /bin/false
+      ansible.builtin.command: /bin/false
