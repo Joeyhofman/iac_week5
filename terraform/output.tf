@@ -1,5 +1,5 @@
 resource "local_file" "ansible_inventory_file" {
-  filename = "../ansible/inventory.ini"
+  filename = "../inventory.ini"
   content  = <<EOT
 [all]
 app1 ansible_host=${esxi_guest.ubuntu_test.ip_address}
